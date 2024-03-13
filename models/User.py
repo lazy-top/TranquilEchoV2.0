@@ -3,7 +3,7 @@ class User(BaseModel):
     email: EmailStr
     password: str
     name: str
-    phone_number: str
+
 class UserIn(BaseModel):
     email: EmailStr
     password: str
