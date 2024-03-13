@@ -4,7 +4,7 @@ router = APIRouter(
     tags=["chat"],
     responses={404: {"message": "Not found"}},
     )
-@router.get("/send")
+@router.post("/start")
 def chat():
     return [{"username": "Rick"}, {"username": "Morty"}]
 

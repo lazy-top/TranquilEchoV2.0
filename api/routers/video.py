@@ -4,6 +4,6 @@ router = APIRouter(
     tags=["video"],
     responses={404: {"message": "Not found"}},
     )
-@router.get("/send")
-def chat():
+@router.get("/get")
+def sendVedioStream():
     return [{"username": "Rick"}, {"username": "Morty"}]

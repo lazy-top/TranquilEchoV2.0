@@ -4,6 +4,6 @@ router = APIRouter(
     tags=["image"],
     responses={404: {"message": "Not found"}},
     )
-@router.get("/send")
-def chat():
+@router.post("/get")
+def sendImageStream():
     return [{"username": "Rick"}, {"username": "Morty"}]

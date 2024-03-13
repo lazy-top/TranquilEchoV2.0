@@ -1,5 +1,4 @@
 from sqlalchemy import Boolean, Column, Integer, String
-
 from .database import Base, engine
 
 
@@ -11,5 +10,18 @@ class User(Base):
     username=Column(String)
     social_media=Column(String)
     is_active = Column(Boolean, default=True)
+class Threads(Base):
+    __tablename__ = "threads"
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, index=True)
+    description = Column(String, index=True)
+    user_id = Column(Integer, index=True)
+class messages(Base):
+    __tablename__ = "messages"
+    id = Column(Integer, primary_key=True, index=True)
+    message = Column(String, index=True)
+    user_id = Column(Integer, index=True)
+    thread_id = Column(Integer, index=True)
+
 if __name__ == '__main__':
     Base.metadata.create_all(engine)
