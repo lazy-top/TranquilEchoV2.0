@@ -7,7 +7,7 @@ import os
 load_dotenv()
 DB_USER=os.getenv('DB_USER')
 DB_PASS=os.getenv('DB_PASS')
-DB_NAME=os.getenv('DB_HOST')
+DB_NAME=os.getenv('DB_NAME')
 SQLALCHEMY_DATABASE_URL = f'mysql+mysqlconnector://{DB_USER}:{DB_PASS}@localhost:3306/{DB_NAME}?charset=utf8'
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, pool_pre_ping=True
