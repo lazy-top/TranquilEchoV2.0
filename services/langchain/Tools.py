@@ -24,27 +24,7 @@ def GetDanger(query: str) -> str:
     """这个是一个工具用于分析用户输入内容是否包含严重心理状况的内容."""
     return f"Results for query {query}"
 
-from langchain.utilities import PythonREPL
 
-# 保持PythonREPL实例的创建不变
-python_repl = PythonREPL()
-
-@tool
-def execute_python_command(query: str) -> str:
-    """一个Python shell。使用它来执行python命令。输入应该是一个有效的python命令。如果你想看到一个值的输出，你应该用`print(...)`打印出来。
-    安全性注意：请勿输入可能损害系统的恶意命令。
-    """
-    # 输入验证
-    if not query.strip():
-        return "输入的命令不能为空。"
-
-    # 尝试执行命令，捕获并处理异常
-    try:
-        result = python_repl.run(query)
-    except Exception as e:
-        return f"执行命令时出错：{str(e)}"
-
-    return result
 # -*- coding: utf-8 -*-
 # @Time    : 2024/3/8 11:19
 # 网页搜索工具

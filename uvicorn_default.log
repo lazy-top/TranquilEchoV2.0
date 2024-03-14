@@ -20,3 +20,483 @@
 [32mINFO[0m:     2024-03-14 11:16:03 - Application shutdown complete.
 [32mINFO[0m:     2024-03-14 11:16:03 - Finished server process [[36m6232[0m]
 [32mINFO[0m:     2024-03-14 11:16:03 - Stopping reloader process [[36m[1m2632[0m]
+[32mINFO[0m:     2024-03-14 11:27:59 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 11:27:59 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 11:27:59 - Started reloader process [[36m[1m14024[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 11:28:07 - Started server process [[36m2924[0m]
+[32mINFO[0m:     2024-03-14 11:28:07 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:28:07 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 11:29:35 - WatchFiles detected changes in 'services\langchain\Tools.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:29:35 - Shutting down
+[32mINFO[0m:     2024-03-14 11:29:35 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:29:35 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:29:35 - Finished server process [[36m2924[0m]
+[32mINFO[0m:     2024-03-14 11:29:37 - Stopping reloader process [[36m[1m14024[0m]
+[32mINFO[0m:     2024-03-14 11:29:46 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 11:29:46 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 11:29:46 - Started reloader process [[36m[1m9924[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 11:29:53 - Started server process [[36m1928[0m]
+[32mINFO[0m:     2024-03-14 11:29:53 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:29:53 - Application startup complete.
+[32mINFO[0m:     2024-03-14 11:30:25 - Shutting down
+[32mINFO[0m:     2024-03-14 11:30:25 - Finished server process [[36m1928[0m]
+[31mERROR[0m:    2024-03-14 11:30:25 - Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\starlette\routing.py", line 743, in lifespan
+    await receive()
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[32mINFO[0m:     2024-03-14 11:30:25 - Stopping reloader process [[36m[1m9924[0m]
+[32mINFO[0m:     2024-03-14 11:30:38 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 11:30:38 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 11:30:38 - Started reloader process [[36m[1m4128[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 11:30:49 - Started server process [[36m4376[0m]
+[32mINFO[0m:     2024-03-14 11:30:49 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:30:49 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 11:36:02 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:36:02 - Shutting down
+[32mINFO[0m:     2024-03-14 11:36:02 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:36:02 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:36:02 - Finished server process [[36m4376[0m]
+[33mWARNING[0m:  2024-03-14 11:36:04 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:36:17 - Started server process [[36m3992[0m]
+[32mINFO[0m:     2024-03-14 11:36:17 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:36:17 - Application startup complete.
+[32mINFO[0m:     2024-03-14 11:36:26 - Shutting down
+[32mINFO[0m:     2024-03-14 11:36:27 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:36:27 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:36:27 - Finished server process [[36m3992[0m]
+[32mINFO[0m:     2024-03-14 11:36:27 - Stopping reloader process [[36m[1m4128[0m]
+[32mINFO[0m:     2024-03-14 11:36:37 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 11:36:37 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 11:36:37 - Started reloader process [[36m[1m2632[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 11:36:45 - Started server process [[36m7428[0m]
+[32mINFO[0m:     2024-03-14 11:36:45 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:36:45 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 11:36:52 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:36:52 - Shutting down
+[32mINFO[0m:     2024-03-14 11:36:52 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:36:52 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:36:52 - Finished server process [[36m7428[0m]
+[32mINFO[0m:     2024-03-14 11:37:05 - Started server process [[36m14152[0m]
+[32mINFO[0m:     2024-03-14 11:37:05 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:37:05 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 11:47:49 - WatchFiles detected changes in 'services\langchain\Models.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:47:49 - Shutting down
+[32mINFO[0m:     2024-03-14 11:47:49 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:47:49 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:47:49 - Finished server process [[36m14152[0m]
+[33mWARNING[0m:  2024-03-14 11:50:03 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 11:53:53 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:54:05 - Started server process [[36m8700[0m]
+[32mINFO[0m:     2024-03-14 11:54:05 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:54:05 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 11:54:49 - WatchFiles detected changes in 'services\langchain\Models.py', 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:54:49 - Shutting down
+[32mINFO[0m:     2024-03-14 11:54:49 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:54:49 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:54:49 - Finished server process [[36m8700[0m]
+[33mWARNING[0m:  2024-03-14 11:54:51 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 11:54:57 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 11:55:08 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:55:20 - Started server process [[36m5340[0m]
+[32mINFO[0m:     2024-03-14 11:55:20 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:55:20 - Application startup complete.
+[32mINFO[0m:     2024-03-14 11:55:28 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 11:55:28 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 11:55:28 - Started reloader process [[36m[1m9560[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 11:55:38 - Started server process [[36m9684[0m]
+[32mINFO[0m:     2024-03-14 11:55:38 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:55:38 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 11:57:08 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 11:57:08 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:57:08 - Shutting down
+[32mINFO[0m:     2024-03-14 11:57:08 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:57:08 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:57:08 - Finished server process [[36m9684[0m]
+[33mWARNING[0m:  2024-03-14 11:57:10 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:57:20 - Started server process [[36m11704[0m]
+[32mINFO[0m:     2024-03-14 11:57:20 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:57:20 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 11:57:25 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:57:25 - Shutting down
+[32mINFO[0m:     2024-03-14 11:57:25 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:57:25 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:57:25 - Finished server process [[36m11704[0m]
+[32mINFO[0m:     2024-03-14 11:57:36 - Started server process [[36m32[0m]
+[32mINFO[0m:     2024-03-14 11:57:36 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:57:36 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 11:58:02 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:58:02 - Shutting down
+[32mINFO[0m:     2024-03-14 11:58:02 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:58:02 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:58:02 - Finished server process [[36m32[0m]
+[32mINFO[0m:     2024-03-14 11:58:10 - Stopping reloader process [[36m[1m9560[0m]
+[32mINFO[0m:     2024-03-14 11:58:19 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 11:58:19 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 11:58:19 - Started reloader process [[36m[1m14124[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 11:58:28 - Started server process [[36m8728[0m]
+[32mINFO[0m:     2024-03-14 11:58:28 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:58:28 - Application startup complete.
+[32mINFO[0m:     2024-03-14 11:58:53 - Shutting down
+[32mINFO[0m:     2024-03-14 11:58:53 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:58:53 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:58:53 - Finished server process [[36m5340[0m]
+[33mWARNING[0m:  2024-03-14 11:58:54 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 11:59:03 - Started server process [[36m7244[0m]
+[32mINFO[0m:     2024-03-14 11:59:03 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:59:03 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:01:22 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 12:01:22 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:01:22 - Shutting down
+[32mINFO[0m:     2024-03-14 12:01:22 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:01:22 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:01:22 - Finished server process [[36m8728[0m]
+[33mWARNING[0m:  2024-03-14 12:01:23 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:01:36 - Started server process [[36m7012[0m]
+[32mINFO[0m:     2024-03-14 12:01:36 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:01:36 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:01:38 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:01:38 - Shutting down
+[32mINFO[0m:     2024-03-14 12:01:38 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:01:38 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:01:38 - Finished server process [[36m7012[0m]
+[32mINFO[0m:     2024-03-14 12:01:42 - Stopping reloader process [[36m[1m14124[0m]
+[32mINFO[0m:     2024-03-14 12:01:54 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 12:01:54 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 12:01:54 - Started reloader process [[36m[1m756[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 12:02:05 - Started server process [[36m4040[0m]
+[32mINFO[0m:     2024-03-14 12:02:05 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:02:05 - Application startup complete.
+[32mINFO[0m:     2024-03-14 12:03:54 - Shutting down
+[32mINFO[0m:     2024-03-14 12:03:54 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:03:54 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:03:54 - Finished server process [[36m7244[0m]
+[33mWARNING[0m:  2024-03-14 12:03:55 - WatchFiles detected changes in 'api\routers\chat.py', 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:04:05 - Started server process [[36m7456[0m]
+[32mINFO[0m:     2024-03-14 12:04:05 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:04:05 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:04:13 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 12:04:13 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:04:13 - Shutting down
+[32mINFO[0m:     2024-03-14 12:04:13 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:04:13 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:04:13 - Finished server process [[36m4040[0m]
+[33mWARNING[0m:  2024-03-14 12:04:23 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:04:24 - Stopping reloader process [[36m[1m756[0m]
+[32mINFO[0m:     2024-03-14 12:04:31 - Shutting down
+[32mINFO[0m:     2024-03-14 12:04:31 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:04:31 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:04:31 - Finished server process [[36m7456[0m]
+[33mWARNING[0m:  2024-03-14 12:04:32 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:04:37 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 12:04:37 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 12:04:37 - Started reloader process [[36m[1m13732[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 12:04:43 - Started server process [[36m2936[0m]
+[32mINFO[0m:     2024-03-14 12:04:43 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:04:43 - Application startup complete.
+[32mINFO[0m:     2024-03-14 12:04:44 - Started server process [[36m12832[0m]
+[32mINFO[0m:     2024-03-14 12:04:44 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:04:44 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:21:37 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py', 'api\routers\chat.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 12:21:37 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py', 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:21:37 - Shutting down
+[32mINFO[0m:     2024-03-14 12:21:37 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:21:37 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:21:37 - Finished server process [[36m12832[0m]
+[33mWARNING[0m:  2024-03-14 12:21:50 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:21:50 - Started server process [[36m9408[0m]
+[32mINFO[0m:     2024-03-14 12:21:50 - Waiting for application startup.
+[31mERROR[0m:    2024-03-14 12:21:50 - Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\uvicorn\server.py", line 79, in serve
+    await self.startup(sockets=sockets)
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\uvicorn\server.py", line 90, in startup
+    await self.lifespan.startup()
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\uvicorn\lifespan\on.py", line 56, in startup
+    await self.startup_event.wait()
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\asyncio\locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\starlette\routing.py", line 743, in lifespan
+    await receive()
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[32mINFO[0m:     2024-03-14 12:21:55 - Stopping reloader process [[36m[1m13732[0m]
+[32mINFO[0m:     2024-03-14 12:22:03 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 12:22:03 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 12:22:03 - Started reloader process [[36m[1m3816[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 12:22:10 - Started server process [[36m8504[0m]
+[32mINFO[0m:     2024-03-14 12:22:10 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:22:10 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:24:13 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:24:13 - Shutting down
+[32mINFO[0m:     2024-03-14 12:24:13 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:24:13 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:24:13 - Finished server process [[36m8504[0m]
+[33mWARNING[0m:  2024-03-14 12:24:15 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 12:24:15 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 12:24:16 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 12:24:17 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:24:24 - Started server process [[36m10816[0m]
+[32mINFO[0m:     2024-03-14 12:24:24 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:24:24 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:25:30 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:25:30 - Shutting down
+[32mINFO[0m:     2024-03-14 12:25:30 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:25:30 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:25:30 - Finished server process [[36m10816[0m]
+[32mINFO[0m:     2024-03-14 12:25:38 - Started server process [[36m7068[0m]
+[32mINFO[0m:     2024-03-14 12:25:38 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:25:38 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:27:08 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:27:08 - Shutting down
+[32mINFO[0m:     2024-03-14 12:27:08 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:27:08 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:27:08 - Finished server process [[36m7068[0m]
+[33mWARNING[0m:  2024-03-14 12:27:09 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:27:10 - Stopping reloader process [[36m[1m3816[0m]
+[32mINFO[0m:     2024-03-14 12:27:23 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 12:27:23 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 12:27:23 - Started reloader process [[36m[1m5788[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 12:27:32 - Started server process [[36m8504[0m]
+[32mINFO[0m:     2024-03-14 12:27:32 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:27:32 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:28:38 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:28:39 - Shutting down
+[32mINFO[0m:     2024-03-14 12:28:39 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:28:39 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:28:39 - Finished server process [[36m8504[0m]
+[32mINFO[0m:     2024-03-14 12:28:48 - Started server process [[36m12332[0m]
+[32mINFO[0m:     2024-03-14 12:28:48 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:28:48 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:30:01 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:30:01 - Shutting down
+[32mINFO[0m:     2024-03-14 12:30:02 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:30:02 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:30:02 - Finished server process [[36m12332[0m]
+[33mWARNING[0m:  2024-03-14 12:30:03 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 12:30:04 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 12:30:04 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:30:05 - Stopping reloader process [[36m[1m5788[0m]
+[32mINFO[0m:     2024-03-14 12:30:16 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 12:30:16 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 12:30:16 - Started reloader process [[36m[1m14124[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 12:30:25 - Started server process [[36m13940[0m]
+[32mINFO[0m:     2024-03-14 12:30:25 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:30:25 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:32:49 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:32:49 - Shutting down
+[32mINFO[0m:     2024-03-14 12:32:49 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:32:49 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:32:49 - Finished server process [[36m13940[0m]
+[32mINFO[0m:     2024-03-14 12:33:00 - Started server process [[36m2140[0m]
+[32mINFO[0m:     2024-03-14 12:33:00 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:33:00 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:33:56 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:33:56 - Shutting down
+[32mINFO[0m:     2024-03-14 12:33:56 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:33:56 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:33:56 - Finished server process [[36m2140[0m]
+[33mWARNING[0m:  2024-03-14 12:34:03 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:34:05 - Stopping reloader process [[36m[1m14124[0m]
+[32mINFO[0m:     2024-03-14 12:34:18 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 12:34:18 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 12:34:18 - Started reloader process [[36m[1m1640[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 12:34:35 - Started server process [[36m2384[0m]
+[32mINFO[0m:     2024-03-14 12:34:35 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:34:35 - Application startup complete.
+[32mINFO[0m:     2024-03-14 12:36:09 - Shutting down
+[32mINFO[0m:     2024-03-14 12:36:09 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:36:09 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:36:09 - Finished server process [[36m2384[0m]
+[32mINFO[0m:     2024-03-14 12:36:09 - Stopping reloader process [[36m[1m1640[0m]
+[32mINFO[0m:     2024-03-14 12:39:47 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 12:39:47 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 12:39:47 - Started reloader process [[36m[1m7516[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 12:39:54 - Started server process [[36m14212[0m]
+[32mINFO[0m:     2024-03-14 12:39:54 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:39:54 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:40:47 - WatchFiles detected changes in 'main.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:40:47 - Shutting down
+[32mINFO[0m:     2024-03-14 12:40:47 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:40:47 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:40:47 - Finished server process [[36m14212[0m]
+[33mWARNING[0m:  2024-03-14 12:40:51 - WatchFiles detected changes in 'main.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:41:13 - Started server process [[36m14924[0m]
+[32mINFO[0m:     2024-03-14 12:41:13 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:41:13 - Application startup complete.
+[32mINFO[0m:     2024-03-14 12:41:33 - Shutting down
+[32mINFO[0m:     2024-03-14 12:41:33 - Finished server process [[36m14924[0m]
+[31mERROR[0m:    2024-03-14 12:41:33 - Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\starlette\routing.py", line 743, in lifespan
+    await receive()
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[32mINFO[0m:     2024-03-14 12:41:34 - Stopping reloader process [[36m[1m7516[0m]
+[32mINFO[0m:     2024-03-14 12:41:48 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 12:41:48 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 12:41:48 - Started reloader process [[36m[1m11860[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 12:42:01 - Started server process [[36m2384[0m]
+[32mINFO[0m:     2024-03-14 12:42:01 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:42:01 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:43:04 - WatchFiles detected changes in 'main.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:43:04 - Shutting down
+[32mINFO[0m:     2024-03-14 12:43:04 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:43:04 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:43:04 - Finished server process [[36m2384[0m]
+[32mINFO[0m:     2024-03-14 12:43:15 - Started server process [[36m4860[0m]
+[32mINFO[0m:     2024-03-14 12:43:15 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:43:15 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:43:38 - WatchFiles detected changes in 'main.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:43:38 - Shutting down
+[32mINFO[0m:     2024-03-14 12:43:38 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:43:38 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:43:38 - Finished server process [[36m4860[0m]
+[32mINFO[0m:     2024-03-14 12:43:42 - Stopping reloader process [[36m[1m11860[0m]
+[32mINFO[0m:     2024-03-14 12:43:52 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 12:43:52 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 12:43:52 - Started reloader process [[36m[1m7292[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 12:43:59 - Started server process [[36m3388[0m]
+[32mINFO[0m:     2024-03-14 12:43:59 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:43:59 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:47:24 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:47:24 - Shutting down
+[32mINFO[0m:     2024-03-14 12:47:24 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:47:24 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:47:24 - Finished server process [[36m3388[0m]
+[33mWARNING[0m:  2024-03-14 12:47:26 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:47:37 - Started server process [[36m11648[0m]
+[32mINFO[0m:     2024-03-14 12:47:37 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:47:37 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:48:05 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:48:05 - Shutting down
+[32mINFO[0m:     2024-03-14 12:48:05 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:48:05 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:48:05 - Finished server process [[36m11648[0m]
+[33mWARNING[0m:  2024-03-14 12:48:09 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:48:20 - Started server process [[36m14748[0m]
+[32mINFO[0m:     2024-03-14 12:48:20 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:48:20 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:50:20 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:50:20 - Shutting down
+[32mINFO[0m:     2024-03-14 12:50:21 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:50:21 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:50:21 - Finished server process [[36m14748[0m]
+[32mINFO[0m:     2024-03-14 12:50:31 - Started server process [[36m9936[0m]
+[32mINFO[0m:     2024-03-14 12:50:31 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:50:31 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:51:00 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:51:00 - Shutting down
+[32mINFO[0m:     2024-03-14 12:51:00 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:51:00 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:51:00 - Finished server process [[36m9936[0m]
+[32mINFO[0m:     2024-03-14 12:51:12 - Started server process [[36m15072[0m]
+[32mINFO[0m:     2024-03-14 12:51:12 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:51:12 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 12:55:52 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:55:52 - Shutting down
+[32mINFO[0m:     2024-03-14 12:55:52 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 12:55:52 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 12:55:52 - Finished server process [[36m15072[0m]
+[33mWARNING[0m:  2024-03-14 12:56:01 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 12:56:14 - Started server process [[36m11108[0m]
+[32mINFO[0m:     2024-03-14 12:56:14 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:56:14 - Application startup complete.
+[32mINFO[0m:     2024-03-14 12:56:23 - Shutting down
+[32mINFO[0m:     2024-03-14 12:56:23 - Finished server process [[36m11108[0m]
+[31mERROR[0m:    2024-03-14 12:56:23 - Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\starlette\routing.py", line 743, in lifespan
+    await receive()
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[32mINFO[0m:     2024-03-14 12:56:23 - Stopping reloader process [[36m[1m7292[0m]
+[32mINFO[0m:     2024-03-14 12:56:34 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 12:56:34 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 12:56:34 - Started reloader process [[36m[1m9408[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 12:56:44 - Started server process [[36m7952[0m]
+[32mINFO[0m:     2024-03-14 12:56:44 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 12:56:44 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 13:21:14 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py', 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 13:21:14 - Shutting down
+[32mINFO[0m:     2024-03-14 13:21:14 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 13:21:14 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 13:21:14 - Finished server process [[36m7952[0m]
+[32mINFO[0m:     2024-03-14 13:21:19 - Stopping reloader process [[36m[1m9408[0m]
+[32mINFO[0m:     2024-03-14 13:47:47 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 13:47:47 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 13:47:47 - Started reloader process [[36m[1m8260[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 13:47:56 - Started server process [[36m7716[0m]
+[32mINFO[0m:     2024-03-14 13:47:56 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 13:47:56 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 13:48:23 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 13:48:23 - Shutting down
+[32mINFO[0m:     2024-03-14 13:48:24 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 13:48:24 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 13:48:24 - Finished server process [[36m7716[0m]
+[33mWARNING[0m:  2024-03-14 13:48:25 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 13:48:31 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 13:48:46 - Started server process [[36m3636[0m]
+[32mINFO[0m:     2024-03-14 13:48:46 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 13:48:46 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 13:49:43 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 13:49:43 - Shutting down
+[32mINFO[0m:     2024-03-14 13:49:43 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 13:49:43 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 13:49:43 - Finished server process [[36m3636[0m]
+[33mWARNING[0m:  2024-03-14 13:49:45 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[33mWARNING[0m:  2024-03-14 13:49:45 - WatchFiles detected changes in 'api\routers\chat.py'. Reloading...
+[32mINFO[0m:     2024-03-14 13:49:49 - Stopping reloader process [[36m[1m8260[0m]
+[32mINFO[0m:     2024-03-14 13:50:03 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 13:50:03 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 13:50:03 - Started reloader process [[36m[1m13512[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 13:50:12 - Started server process [[36m1756[0m]
+[32mINFO[0m:     2024-03-14 13:50:12 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 13:50:12 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 13:50:48 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 13:50:48 - Shutting down
+[32mINFO[0m:     2024-03-14 13:50:48 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 13:50:48 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 13:50:48 - Finished server process [[36m1756[0m]
+[33mWARNING[0m:  2024-03-14 13:50:50 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 13:51:01 - Started server process [[36m13852[0m]
+[32mINFO[0m:     2024-03-14 13:51:01 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 13:51:01 - Application startup complete.

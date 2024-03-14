@@ -3,16 +3,12 @@
 #聊天功能实现
 # @File    : ChatService.py
 # @Software: PyCharm
+
+# import asyncio
 from langchain import hub
 from langchain.memory import ConversationBufferMemory
-from langchain.agents import AgentType
-from langchain.memory import ConversationBufferMemory
-from langchain_core.callbacks.base import BaseCallbackManager
 from langchain.agents import AgentExecutor, create_structured_chat_agent
-from services.langchain.handler import MyChainStreamHandler
-
 from services.langchain.Models import QianfanLLMCreateModel
-
 from services.langchain.Tools import Knowledge_search
 """
 CRISPE Prompt Framework提示词模板:
@@ -27,8 +23,10 @@ CRISPE Prompt Framework提示词模板:
 输出范围： 请输入期望大模型生成内容的风格。
 
 """
+
+
+
 prompt = hub.pull("hwchase17/structured-chat-agent")
-myStreamHandler=MyChainStreamHandler()
 memory = ConversationBufferMemory(memory_key="chat_history")
 tools=[
     Knowledge_search
@@ -38,11 +36,52 @@ agent = create_structured_chat_agent(qfModel, tools, prompt)
 agent_executor = AgentExecutor(
     agent=agent, tools=tools, verbose=True, handle_parsing_errors=True
 )
+async def run(content:str):
+    async for chunk in agent_executor.astream(
+        {"input": content}
+    ):
+        yield chunk
 
-class ChatService:
-    def run(content):
-     """流式响应"""
-     return agent_executor.astream({"input": content})
+
+
+# return None
+# async def run(content: str):
+#      """流式响应"""
+ 
+#      return agent_executor.iter(content)
+
+# # 定义一个异步回调处理器
+# class AsyncCallbackHandler(AsyncIteratorCallbackHandler):
+#     content: str = ""
+#     final_answer: bool = False
+
+#     async def on_llm_new_token(self, token: str, **kwargs) -> None:
+#         self.content += token
+#         if self.final_answer:
+#             self.queue.put_nowait(token)
+#         elif ";" in self.content:
+#             self.final_answer = True
+#             self.content = ""
+
+#     async def on_llm_end(self, response, **kwargs) -> None:
+#         if self.final_answer:
+#             self.content = ""
+#             self.final_answer = False
+#             self.done.set()
+#         else:
+#             self.content = ""
+
+# # 初始化LangChain agent
+# AGENT = agent_executor # 初始化您的LangChain agent
+# AGENT.callbacks = AsyncCallbackHandler()
+# # 定义一个生成器函数，用于创建流式响应
+# async def create_gen(history, stream_it: AsyncCallbackHandler):
+#     task = asyncio.create_task(AGENT.acall(history))
+#     async for token in stream_it.aiter():
+#         yield token
+#     await task
+
+
    
         
 
