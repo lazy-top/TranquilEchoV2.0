@@ -3,18 +3,17 @@
 #聊天功能实现
 # @File    : ChatService.py
 # @Software: PyCharm
-
-
+from langchain import hub
 from langchain.memory import ConversationBufferMemory
 from langchain.agents import AgentType
 from langchain.memory import ConversationBufferMemory
 from langchain_core.callbacks.base import BaseCallbackManager
-from langchain.agents import initialize_agent
+from langchain.agents import AgentExecutor, create_structured_chat_agent
+from services.langchain.handler import MyChainStreamHandler
 
+from services.langchain.Models import QianfanLLMCreateModel
 
-from Models import QianfanModel
-
-from utils import Knowledge_search
+from services.langchain.Tools import Knowledge_search
 """
 CRISPE Prompt Framework提示词模板:
 能力与角色: 请输入你希望大模型扮演怎样的角色。
@@ -28,19 +27,22 @@ CRISPE Prompt Framework提示词模板:
 输出范围： 请输入期望大模型生成内容的风格。
 
 """
+prompt = hub.pull("hwchase17/structured-chat-agent")
 myStreamHandler=MyChainStreamHandler()
 memory = ConversationBufferMemory(memory_key="chat_history")
 tools=[
     Knowledge_search
 ]
-qfModel=CreateModel()
-xihai = initialize_agent(tools, qfModel, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, verbose=False, memory=memory,handle_parsing_errors=True,callback_manager=BaseCallbackManager([myStreamHandler]))
+qfModel=QianfanLLMCreateModel()
+agent = create_structured_chat_agent(qfModel, tools, prompt)
+agent_executor = AgentExecutor(
+    agent=agent, tools=tools, verbose=True, handle_parsing_errors=True
+)
+
 class ChatService:
     def run(content):
      """流式响应"""
-     text=xihai(content)
-     print(text)
-     return myStreamHandler.generate_tokens()
+     return agent_executor.astream({"input": content})
    
         
 

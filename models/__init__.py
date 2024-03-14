@@ -12,3 +12,5 @@ class Therapist(BaseModel):
     phone_number:str
     title:str
     description:str
+class Message(BaseModel):
+    content:str

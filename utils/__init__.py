@@ -73,7 +73,24 @@ def authenticate_user(db: Session, email: str, password: str):
     if not verify_password(password, user.hashed_password):  # 验证密码是否匹配
         return False
     return True
-
+def authenticate_therapist(db: Session, email: str, password: str):
+    """
+    验证咨询师登录。
+    
+    参数:
+    - db: 数据库会话实例。
+    - email: 用户的电子邮件地址。
+    - password: 用户提供的密码。
+    
+    返回值:
+    - 如果验证成功，返回True；否则返回False。
+    """
+    therapist = db.query(therapist).filter(User.email == email).first()  # 根据电子邮件查询
+    if not therapist:  # 如果用户不存在，返回False
+        return False
+    if not verify_password(password, therapist.hashed_password):  # 验证密码是否匹配
+        return False
+    return True
 def get_db():
     """
     获取数据库会话实例。

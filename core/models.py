@@ -11,11 +11,14 @@ class User(Base):
     social_media=Column(String)
     is_active = Column(Boolean, default=True)
 class Threads(Base):
-    __tablename__ = "threads"
+    __tablename__ = "therapists"
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, index=True)
+    name = Column(String, index=True)
+    email = Column(String, unique=True, index=True)
+    password = Column(String, index=True)
+    phone = Column(String, index=True)
+    qualification = Column(String, index=True)
     description = Column(String, index=True)
-    user_id = Column(Integer, index=True)
 class messages(Base):
     __tablename__ = "messages"
     id = Column(Integer, primary_key=True, index=True)

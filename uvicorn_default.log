@@ -9,3 +9,14 @@
 [32mINFO[0m:     2024-03-13 19:05:19 - Application shutdown complete.
 [32mINFO[0m:     2024-03-13 19:05:19 - Finished server process [[36m4508[0m]
 [32mINFO[0m:     2024-03-13 19:05:19 - Stopping reloader process [[36m[1m6632[0m]
+[32mINFO[0m:     2024-03-14 11:15:37 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 11:15:37 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 11:15:37 - Started reloader process [[36m[1m2632[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 11:15:41 - Started server process [[36m6232[0m]
+[32mINFO[0m:     2024-03-14 11:15:41 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 11:15:41 - Application startup complete.
+[32mINFO[0m:     2024-03-14 11:16:03 - Shutting down
+[32mINFO[0m:     2024-03-14 11:16:03 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 11:16:03 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 11:16:03 - Finished server process [[36m6232[0m]
+[32mINFO[0m:     2024-03-14 11:16:03 - Stopping reloader process [[36m[1m2632[0m]
