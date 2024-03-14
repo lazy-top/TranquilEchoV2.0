@@ -1,12 +1,9 @@
-
-import asyncio
 from fastapi import  FastAPI
 import uvicorn
 from api.routers import  chat,guest,image,therapist,video
 from uvicorn.config import LOGGING_CONFIG
-from fastapi.security import OAuth2PasswordBearer
-from fastapi.responses import StreamingResponse
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
+
 
 
 app=FastAPI(
@@ -68,27 +65,6 @@ log_config = {
 }
 LOGGING_CONFIG["formatters"]["default"]["fmt"] = "%(asctime)s - %(levelprefix)s %(message)s"
 
-def generate_chunks():
-    """模拟一个无限循环生成数据的生成器函数"""
-    counter = 0
-    while counter<10:
-        yield f"data chunk {counter}\n".encode()  # 注意这里返回的是字节流，通常需要编码成bytes
-        counter += 1
-
-@app.get("/")
-async def stream_data():
-    headers = {"Content-Type": "text/plain"}  # 设置响应头
-    return StreamingResponse(generate_chunks(), headers=headers, status_code=200)
-
-# 或者，如果你正在处理SSE：
-@app.get("/sse")
-async def sse_stream():
-    headers = {"Content-Type": "text/event-stream"}
-    async def event_stream():
-        for i in range(10):  # 仅做演示，这里生成100个事件
-            await asyncio.sleep(0.5)  # 模拟延迟
-            yield f"data: {i}\n\n".encode()  # SSE数据格式要求每条数据前面加上"data: "，并以两个换行符结束
-    return StreamingResponse(event_stream(), headers=headers, status_code=200)
 
 if __name__ =='__main__': 
     uvicorn.run(

@@ -1,7 +1,17 @@
-import os
+
 from dotenv import load_dotenv
-load_dotenv()
+from fastapi import Depends, HTTPException
+from fastapi.security import OAuth2PasswordBearer
 from core.database import SessionLocal
+import re
+from passlib.context import CryptContext
+from requests import Session
+from core.models import User
+from datetime import datetime, timedelta, timezone
+from jose import JWTError, jwt
+from passlib.context import CryptContext
+import os
+load_dotenv()
 def R_success(data: dict|str|object = None) -> dict:
     return {
         "code": 200,
@@ -14,10 +24,6 @@ def R_error(msg: str = "操作失败") -> dict:
         "msg": msg,
         "data": None,
     }
-from passlib.context import CryptContext
-from requests import Session
-
-from core.models import User
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -27,10 +33,7 @@ def verify_password(plain_password, hashed_password):
 def get_password_hash(password):
     return pwd_context.hash(password)
 
-from datetime import datetime, timedelta, timezone
-from jose import jwt
-from passlib.context import CryptContext
-
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 SECRET_KEY = os.getenv('SECRET_KEY')
 ALGORITHM = os.getenv('ALGORITHM')
 ACCESS_TOKEN_EXPIRE_MINUTES =int(os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES'))
@@ -91,6 +94,39 @@ def authenticate_therapist(db: Session, email: str, password: str):
     if not verify_password(password, therapist.hashed_password):  # 验证密码是否匹配
         return False
     return True
+
+async def get_current_user(token: str = Depends(oauth2_scheme)):
+    """
+    异步函数，用于获取当前用户的身份验证信息。
+    
+    参数:
+    - token (str): 依赖于oauth2_scheme的令牌，用于用户身份验证。
+    
+    返回值:
+    - username (str): 验证成功后返回的用户用户名。
+    
+    抛出:
+    - HTTPException: 如果无法验证令牌的有效性，将抛出此异常。
+    """
+    # 准备用于认证失败时返回的异常信息
+    credentials_exception = HTTPException(
+        status_code=500,
+        detail="Could not validate credentials",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+    try:
+        # 尝试使用JWT解码令牌以获取用户信息
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username: str = payload.get("sub")
+        if username is None:
+            # 如果解码后没有找到用户名，抛出认证异常
+            raise credentials_exception
+        return(username)
+    except JWTError:
+        # 如果JWT解码过程中出现错误，抛出认证异常
+        raise credentials_exception
+
+
 def get_db():
     """
     获取数据库会话实例。
@@ -106,7 +142,7 @@ def get_db():
         yield db  # 将数据库会话实例作为生成器的元素返回，供调用者使用
     finally:
         db.close()  # 确保在函数退出时关闭数据库会话
-import re
+
 
 def check_email(email):
     """
