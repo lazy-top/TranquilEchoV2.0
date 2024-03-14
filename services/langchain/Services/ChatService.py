@@ -5,10 +5,11 @@
 # @Software: PyCharm
 
 # import asyncio
+from fastapi import HTTPException
 from langchain import hub
 from langchain.memory import ConversationBufferMemory
 from langchain.agents import AgentExecutor, create_structured_chat_agent
-from services.langchain.Models import QianfanLLMCreateModel
+from services.langchain.Models import getqf
 from services.langchain.Tools import Knowledge_search
 """
 CRISPE Prompt Framework提示词模板:
@@ -23,25 +24,56 @@ CRISPE Prompt Framework提示词模板:
 输出范围： 请输入期望大模型生成内容的风格。
 
 """
-
-
-
 prompt = hub.pull("hwchase17/structured-chat-agent")
 memory = ConversationBufferMemory(memory_key="chat_history")
 tools=[
     Knowledge_search
 ]
-qfModel=QianfanLLMCreateModel()
+qfModel=getqf()
 agent = create_structured_chat_agent(qfModel, tools, prompt)
 agent_executor = AgentExecutor(
     agent=agent, tools=tools, verbose=True, handle_parsing_errors=True
 )
-async def run(content:str):
-    async for chunk in agent_executor.astream(
-        {"input": content}
-    ):
-        yield chunk
 
+async def run(content:str):
+    for event in agent_executor.astream_events(
+        {"input": content},
+        version="v1",
+    ):
+        kind = event["event"]
+        if kind == "on_chain_start":
+            if (
+                event["name"] == "Agent"
+            ):  # Was assigned when creating the agent with `.with_config({"run_name": "Agent"})`
+                print(
+                    f"Starting agent: {event['name']} with input: {event['data'].get('input')}"
+                )
+        elif kind == "on_chain_end":
+            if (
+                event["name"] == "Agent"
+            ):  # Was assigned when creating the agent with `.with_config({"run_name": "Agent"})`
+                print()
+                print("--")
+                print(
+                    f"Done agent: {event['name']} with output: {event['data'].get('output')['output']}"
+                )
+        if kind == "on_chat_model_stream":
+            content = event["data"]["chunk"].content
+            if content:
+                # Empty content in the context of OpenAI means
+                # that the model is asking for a tool to be invoked.
+                # So we only print non-empty content
+                yield f"data: {content}".encode()
+        elif kind == "on_tool_start":
+            print("--")
+            print(
+                f"Starting tool: {event['name']} with inputs: {event['data'].get('input')}"
+            )
+        elif kind == "on_tool_end":
+            print(f"Done tool: {event['name']}")
+            print(f"Tool output was: {event['data'].get('output')}")
+            print("--")
+        
 
 
 # return None

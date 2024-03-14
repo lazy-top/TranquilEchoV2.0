@@ -500,3 +500,56 @@ asyncio.exceptions.CancelledError
 [32mINFO[0m:     2024-03-14 13:51:01 - Started server process [[36m13852[0m]
 [32mINFO[0m:     2024-03-14 13:51:01 - Waiting for application startup.
 [32mINFO[0m:     2024-03-14 13:51:01 - Application startup complete.
+[32mINFO[0m:     2024-03-14 13:51:29 - Shutting down
+[32mINFO[0m:     2024-03-14 13:51:29 - Finished server process [[36m13852[0m]
+[31mERROR[0m:    2024-03-14 13:51:29 - Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\starlette\routing.py", line 743, in lifespan
+    await receive()
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\envs\TranquilEchoV2.0\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+[32mINFO[0m:     2024-03-14 13:51:29 - Stopping reloader process [[36m[1m13512[0m]
+[32mINFO[0m:     2024-03-14 13:54:23 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 13:54:23 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 13:54:23 - Started reloader process [[36m[1m15036[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 13:54:30 - Started server process [[36m7068[0m]
+[32mINFO[0m:     2024-03-14 13:54:30 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 13:54:30 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 13:55:47 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 13:55:47 - Shutting down
+[32mINFO[0m:     2024-03-14 13:55:47 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 13:55:47 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 13:55:47 - Finished server process [[36m7068[0m]
+[32mINFO[0m:     2024-03-14 13:55:58 - Started server process [[36m6252[0m]
+[32mINFO[0m:     2024-03-14 13:55:58 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 13:55:58 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 13:56:03 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 13:56:03 - Shutting down
+[32mINFO[0m:     2024-03-14 13:56:03 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 13:56:03 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 13:56:03 - Finished server process [[36m6252[0m]
+[32mINFO[0m:     2024-03-14 13:56:16 - Started server process [[36m14904[0m]
+[32mINFO[0m:     2024-03-14 13:56:16 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 13:56:16 - Application startup complete.
+[33mWARNING[0m:  2024-03-14 13:59:51 - WatchFiles detected changes in 'services\langchain\Services\ChatService.py'. Reloading...
+[32mINFO[0m:     2024-03-14 13:59:51 - Shutting down
+[32mINFO[0m:     2024-03-14 13:59:51 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 13:59:51 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 13:59:51 - Finished server process [[36m14904[0m]
+[32mINFO[0m:     2024-03-14 13:59:53 - Stopping reloader process [[36m[1m15036[0m]
+[32mINFO[0m:     2024-03-14 14:00:08 - Will watch for changes in these directories: ['C:\\Users\\Administrator\\Desktop\\mind_app\\TranquilEchoV2']
+[32mINFO[0m:     2024-03-14 14:00:08 - Uvicorn running on [1mhttp://127.0.0.1:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     2024-03-14 14:00:08 - Started reloader process [[36m[1m13848[0m] using [36m[1mWatchFiles[0m
+[32mINFO[0m:     2024-03-14 14:00:17 - Started server process [[36m4656[0m]
+[32mINFO[0m:     2024-03-14 14:00:17 - Waiting for application startup.
+[32mINFO[0m:     2024-03-14 14:00:17 - Application startup complete.
+[32mINFO[0m:     2024-03-14 14:01:01 - Shutting down
+[32mINFO[0m:     2024-03-14 14:01:02 - Waiting for application shutdown.
+[32mINFO[0m:     2024-03-14 14:01:02 - Application shutdown complete.
+[32mINFO[0m:     2024-03-14 14:01:02 - Finished server process [[36m4656[0m]
+[32mINFO[0m:     2024-03-14 14:01:02 - Stopping reloader process [[36m[1m13848[0m]
+[32mINFO[0m:     2024-03-14 18:21:38 - Shutting down

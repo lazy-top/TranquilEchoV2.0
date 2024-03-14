@@ -88,7 +88,6 @@ async def sse_stream():
         for i in range(10):  # 仅做演示，这里生成100个事件
             await asyncio.sleep(0.5)  # 模拟延迟
             yield f"data: {i}\n\n".encode()  # SSE数据格式要求每条数据前面加上"data: "，并以两个换行符结束
-
     return StreamingResponse(event_stream(), headers=headers, status_code=200)
 
 if __name__ =='__main__': 
@@ -97,7 +96,7 @@ if __name__ =='__main__':
             host="127.0.0.1",
             reload=True,
             port=8000,
-            log_config=log_config,
+            # log_config=log_config,
         )
 
 # def get_db():
