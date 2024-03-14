@@ -11,6 +11,8 @@ from datetime import datetime, timedelta, timezone
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 import os
+import models
+from models import Guest
 load_dotenv()
 def R_success(data: dict|str|object = None) -> dict:
     return {
@@ -126,7 +128,14 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
         # 如果JWT解码过程中出现错误，抛出认证异常
         raise credentials_exception
 
-
+# 管理员用户认证依赖项
+async def get_current_guest_user(token: str = Depends(oauth2_scheme)) -> Guest:
+    # 这里应该是token解码和管理员用户验证逻辑
+    return Guest(username="admin", email="admin@example.com", admin_code="secret")
+# 普通用户认证依赖项
+async def get_current_regular_user(token: str = Depends(oauth2_scheme)) -> models.User:
+    # 这里应该是token解码和普通用户验证逻辑
+    return models.User(username="user", email="user@example.com")
 def get_db():
     """
     获取数据库会话实例。

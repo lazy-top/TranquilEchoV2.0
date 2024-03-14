@@ -1,8 +1,9 @@
 
 import asyncio
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import StreamingResponse
 from models import Message
+from utils import R_error, get_current_user
 from services.langchain.Models import getqf
 router = APIRouter(    
     prefix="/chat",
@@ -11,10 +12,11 @@ router = APIRouter(
     )
 
 @router.post("/start")
-async def stream_chat(message: Message):
+async def stream_chat(message: Message,user:str= Depends(get_current_user)):
+    """start chat"""
     qfModel=getqf()
     if(message.content==" " or len(message.content)>1000):
-        return {"message":"content is too long"}
+        return R_error('格式错误')
     async def stream_data(content:str):
       async for chunk in qfModel.astream(content):
         yield f"data: {chunk}\n\n".encode()

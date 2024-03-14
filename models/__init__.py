@@ -14,3 +14,9 @@ class Therapist(BaseModel):
     description:str
 class Message(BaseModel):
     content:str
+class User(BaseModel):
+    username:str
+    password:str
+    email:str
+    full_name:str
+    phone_number:str
