@@ -1,6 +1,6 @@
 from fastapi import  FastAPI
 import uvicorn
-from api.routers import  chat,guest,image,therapist,video
+from api.routers import  chat,guest,image,therapist,video,sound
 from uvicorn.config import LOGGING_CONFIG
 
 
@@ -26,6 +26,7 @@ app.include_router(guest.router)
 # app.include_router(user.router)
 app.include_router(image.router)
 app.include_router(video.router)
+app.include_router(sound.router)
 # # 自定义日志配置
 log_config = {
     "version": 1,

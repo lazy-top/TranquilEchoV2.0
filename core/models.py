@@ -1,6 +1,11 @@
 from sqlalchemy import Boolean, Column, Integer, String
 from .database import Base, engine
 
+class Guest(Base):
+    __tablename__ = "guests"
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, index=True)
+    password = Column(String, index=True)
 
 class User(Base):
     __tablename__ = "users"

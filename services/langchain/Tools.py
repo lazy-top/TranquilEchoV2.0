@@ -32,7 +32,7 @@ def GetDanger(query: str) -> str:
 # @Software: PyCharm
 
 from langchain.agents import tool
-from langchain.chains import LLMRequestsChain
+from langchain.chains.llm_requests import LLMRequestsChain
 import urllib.parse
 
 # 定义搜索引擎的基URL作为常量
@@ -40,7 +40,7 @@ SEARCH_URL = 'https://cn.bing.com/search?q='
 
 @tool
 def web_search(query: str) -> str:
-    """一个帮助用户搜索最近的状况web搜索工具."""
+    """一个帮助用户搜索最近的状况或者相关知识的web搜索工具."""
     # 对查询字符串进行编码，防止URL注入
     encoded_query = urllib.parse.quote(query)
     # 使用编码后的查询构建搜索URL
@@ -48,7 +48,7 @@ def web_search(query: str) -> str:
     
     try:
         # 使用LLMRequestsChain进行搜索
-        result = LLMRequestsChain().run(search_url)
+        result = LLMRequestsChain(llm_chain=getqf(), input_key=search_url)
     except Exception as e:
         # 在发生异常时处理，例如可以返回一个错误消息或记录日志
         # 此处为示例，具体实现应根据实际需求决定

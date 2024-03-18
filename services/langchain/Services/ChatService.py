@@ -31,48 +31,21 @@ tools=[
 ]
 qfModel=getqf()
 agent = create_structured_chat_agent(qfModel, tools, prompt)
+print(agent)
 agent_executor = AgentExecutor(
     agent=agent, tools=tools, verbose=True, handle_parsing_errors=True
 )
 
 async def run(content:str):
-    for event in agent_executor.astream_events(
+   async for event in agent_executor.astream_events(
         {"input": content},
         version="v1",
     ):
         kind = event["event"]
-        if kind == "on_chain_start":
-            if (
-                event["name"] == "Agent"
-            ):  # Was assigned when creating the agent with `.with_config({"run_name": "Agent"})`
-                print(
-                    f"Starting agent: {event['name']} with input: {event['data'].get('input')}"
-                )
-        elif kind == "on_chain_end":
-            if (
-                event["name"] == "Agent"
-            ):  # Was assigned when creating the agent with `.with_config({"run_name": "Agent"})`
-                print()
-                print("--")
-                print(
-                    f"Done agent: {event['name']} with output: {event['data'].get('output')['output']}"
-                )
         if kind == "on_chat_model_stream":
-            content = event["data"]["chunk"].content
+            content = event["data"]["chunk"]
             if content:
-                # Empty content in the context of OpenAI means
-                # that the model is asking for a tool to be invoked.
-                # So we only print non-empty content
                 yield f"data: {content}".encode()
-        elif kind == "on_tool_start":
-            print("--")
-            print(
-                f"Starting tool: {event['name']} with inputs: {event['data'].get('input')}"
-            )
-        elif kind == "on_tool_end":
-            print(f"Done tool: {event['name']}")
-            print(f"Tool output was: {event['data'].get('output')}")
-            print("--")
         
 
 

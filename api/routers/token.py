@@ -6,8 +6,8 @@ router = APIRouter(
     tags=["token"],
     )
 #实现游客登录获取token的功能
-@router.post("/login")
-def login(guest:Guest ):
+@router.post("/token")
+def login(guest:Guest):
     """游客登录获取token"""
     if(not guest.guest_bool):
         return R_error()

@@ -1,0 +1,34 @@
+import pyttsx3 
+from datetime import datetime
+# 真实say：
+def say_real(text):
+    from TTS.api import TTS
+    tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=True)
+
+    # generate speech by cloning a voice using default settings
+    tts.tts_to_file(text="It took me quite a long time to develop a voice, and now that I have it I'm not going to be silent.",
+                    file_path="output.wav",
+                    speaker_wav="/path/to/target/speaker.wav",
+                    language="en")
+
+    # generate speech by cloning a voice using custom settings
+    tts.tts_to_file(text="It took me quite a long time to develop a voice, and now that I have it I'm not going to be silent.",
+                    file_path="output.wav",
+                    speaker_wav="/path/to/target/speaker.wav",
+                    language="en",
+                    decoder_iterations=30)
+
+
+def fast_say(text)->str:
+    engine = pyttsx3.init()
+    # 设置语速 (words per minute)
+    engine.setProperty('rate', 200)  # 语速为每分钟150个单词
+
+    # 设置音量 (0.0 到 1.0)
+    engine.setProperty('volume', 0.9)  # 音量为80%的最大音量
+
+    # 设置音高 (0.0 到 2.0, 1.0为默认值)
+    engine.setProperty('pitch', 1.2)  # 音高为默认值
+    filename=datetime.fromtimestamp(datetime.now()).strftime('%Y-%m-%d_%H-%M-%S') +"_"+text+ '_output.wav'
+    engine.save_to_file(text, filename)
+    return filename
