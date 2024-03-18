@@ -2,7 +2,7 @@ from fastapi import  FastAPI
 import uvicorn
 from api.routers import  chat,guest,image,therapist,video,sound
 from uvicorn.config import LOGGING_CONFIG
-
+from fastapi.staticfiles import StaticFiles
 
 
 
@@ -19,7 +19,7 @@ TranquilEchoV2.0API
 )
 
 # Dependency
-
+app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(chat.router)
 app.include_router(therapist.router)
 app.include_router(guest.router)

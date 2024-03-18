@@ -7,7 +7,7 @@ router = APIRouter(
     responses={404: {"message": "Not found"}},
     )
 #实现游客登录获取token的功能
-@router.post("/login")
+@router.post("/login",summary="游客登录获取token")
 def login(guest:Guest):
     """游客登录获取token"""
     if(not guest.guest_bool):

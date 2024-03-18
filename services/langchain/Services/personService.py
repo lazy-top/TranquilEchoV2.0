@@ -5,10 +5,9 @@
 # @Software: PyCharm
 
 # import asyncio
-from fastapi import HTTPException
 from langchain import hub
 from langchain.memory import ConversationBufferMemory
-from langchain.agents import AgentExecutor, create_structured_chat_agent,create_react_agent
+from langchain.agents import AgentExecutor,create_react_agent
 from services.langchain.Models import getqf
 from services.langchain.Tools import Knowledge_search
 from langchain.prompts import PromptTemplate
@@ -62,12 +61,7 @@ agent = create_react_agent(qfModel, tools, prompt)
 agent_executor =AgentExecutor(agent=agent,tools=tools,memory=chat_history,handle_parsing_errors=True,max_execution_time=1)
 
 async def run(content:str):
-   async for event in agent_executor.astream_events(
-        {"input": content},
-        version="v1",
+   async for chunk in agent_executor.stream(
+     content
     ):
-        kind = event["event"]
-        if kind == "on_chat_model_stream":
-            content = event["data"]["chunk"]
-            if content:
-                yield f"data: {content}".encode()
+        yield f"data: {chunk}".encode()

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+</head>
+
+<body>
+    <input type="text" id="input" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+    <div id="output"></div>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:8000/chat/start');
+
+        // 连接状态的错误处理
+        socket.onopen = function () {
+            console.log('WebSocket connection opened');
+        };
+        socket.onerror = function (error) {
+            console.error('WebSocket error: ', error);
+        };
+
+        socket.onmessage = function (event) {
+            try {
+                const data = JSON.parse(event.data);
+                appendMessage(data.role, data.content);
+            } catch (error) {
+                console.error('Error parsing message: ', error);
+            }
+        };
+
+        function appendMessage(role, content) {
+            const output = document.getElementById('output');
+            // 使用textContent防止XSS攻击，若需要样式，可考虑使用class
+            const messageNode = document.createTextNode(`(${role}): ${content}`);
+            const paragraph = document.createElement('p');
+            paragraph.appendChild(messageNode);
+            output.appendChild(paragraph);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('input');
+            // 检查输入是否为空
+            if (!input.value) {
+                console.warn('Message is empty');
+                return;
+            }
+            const message = {
+                role: 'user',
+                content: input.value
+            };
+            try {
+                const messageNode = document.createTextNode(`(user): ${input.value}`);
+                const paragraph = document.createElement('p');
+                paragraph.appendChild(messageNode);
+                output.appendChild(paragraph);
+                socket.send(JSON.stringify(message));
+            } catch (error) {
+                console.error('Error sending message: ', error);
+            }
+            // 重置输入框内容
+            input.value = '';
+            // 重新聚焦到输入框
+            input.focus();
+        }
+    </script>
+</body>
+
+</html>
