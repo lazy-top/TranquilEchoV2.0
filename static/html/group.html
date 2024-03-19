@@ -1,29 +1,129 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Chat Room</title>
-    </head>
-    <body>
-        <h1>Welcome to the Chat Room</h1>
-        <input type="text" id="message" placeholder="Type your message here...">
-        <button onclick="sendMessage()">Send</button>
-        <ul id="messages"></ul>
-        <script>
-            const ws = new WebSocket(`ws://127.0.0.1:8000/chat/group`);
-            const messages = document.getElementById("messages");
-            const messageInput = document.getElementById("message");
+<head>
+    <title>Real-Time Chat</title>
+    <style>
+        .chat-container {
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .emoji-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .emoji {
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container" id="chatMessages"></div>
+    <input type="file" id="fileInput" />
+    <input type="text" id="messageInput" />
+    <button onclick="sendMessage()">Send</button>
+    <button onclick="startRecording()">Start Recording</button>
+    <button onclick="stopRecording()">Stop Recording</button>
+    <div class="emoji-container">
+        <span class="emoji" onclick="sendEmoji('😊')">😊</span>
+        <span class="emoji" onclick="sendEmoji('❤️')">❤️</span>
+        <span class="emoji" onclick="sendEmoji('🎉')">🎉</span>
+        <!-- 添加更多表情 -->
+        <span class="emoji" onclick="sendEmoji('😄')">😄</span>
+        <span class="emoji" onclick="sendEmoji('😍')">😍</span>
+        <span class="emoji" onclick="sendEmoji('🥳')">🥳</span>
+        <span class="emoji" onclick="sendEmoji('🌟')">🌟</span>
+        <span class="emoji" onclick="sendEmoji('🎈')">🎈</span>
+        <span class="emoji" onclick="sendEmoji('🌺')">🌺</span>
+        <!-- 添加更多表情 -->
+    </div>
 
-            ws.onmessage = (event) => {
-                const messageItem = document.createElement("li");
-                messageItem.textContent = event.data;
-                messages.appendChild(messageItem);
-            };
+    <script>
+        const ws = new WebSocket("ws://localhost:8000/chat/group/user1");
 
-            function sendMessage() {
-                const input = document.getElementById("message");
-                ws.send(input.value);
-                input.value = "";
+        ws.onmessage = function(event) {
+            const message = JSON.parse(event.data);
+            displayMessage(message);
+            // 添加通知功能
+            showNotification("New Message", message.content);
+        };
+
+        function sendMessage() {
+            const messageInput = document.getElementById("messageInput");
+            const message = messageInput.value;
+            ws.send(JSON.stringify({ type: "text", content: message }));
+            messageInput.value = "";
+        }
+
+        function displayMessage(message) {
+            const chatMessages = document.getElementById("chatMessages");
+            const messageDiv = document.createElement("div");
+            if (message.message_type === "image") {
+                const image = document.createElement("img");
+                image.src = message.content;
+                messageDiv.appendChild(image);
+            } else if (message.message_type === "emoji") {
+                messageDiv.textContent = `${message.timestamp} - ${message.content}`;
+            } else {
+                messageDiv.textContent = `${message.timestamp} - ${message.content}`;
             }
-        </script>
-    </body>
+            chatMessages.appendChild(messageDiv);
+        }
+
+        // 添加通知功能
+        function showNotification(title, message) {
+            // 使用浏览器原生通知API
+            if (Notification.permission === "granted") {
+                new Notification(title, { body: message });
+            } else if (Notification.permission !== "denied") {
+                Notification.requestPermission().then(permission => {
+                    if (permission === "granted") {
+                        new Notification(title, { body: message });
+                    }
+                });
+            }
+        }
+
+        // 实现语音发送功能
+        let mediaRecorder;
+        let recordedChunks = [];
+
+        function startRecording() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.ondataavailable = event => {
+                        if (event.data.size > 0) {
+                            recordedChunks.push(event.data);
+                        }
+                    };
+                    mediaRecorder.onstop = () => {
+                        const blob = new Blob(recordedChunks, { type: 'audio/wav' });
+                        const audioUrl = URL.createObjectURL(blob);
+                        ws.send(JSON.stringify({ type: "audio", content: audioUrl }));
+                    };
+                    mediaRecorder.start();
+                })
+                .catch(error => {
+                    console.error('Error accessing the microphone:', error);
+                });
+        }
+
+        function stopRecording() {
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                mediaRecorder.stop();
+            }
+        }
+
+        // 实现发送表情功能
+        function sendEmoji(emoji) {
+            ws.send(JSON.stringify({ type: "emoji", content: emoji }));
+        }
+    </script>
+</body>
 </html>
