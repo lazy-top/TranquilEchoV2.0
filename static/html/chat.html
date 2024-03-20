@@ -12,7 +12,7 @@
     <div id="output"></div>
 
     <script>
-        const socket = new WebSocket('ws://localhost:8000/chat/start');
+        const socket = new WebSocket('ws://127.0.0.1:8000/chat/start');
 
         // 连接状态的错误处理
         socket.onopen = function () {

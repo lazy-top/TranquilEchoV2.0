@@ -44,7 +44,7 @@
     </div>
 
     <script>
-        const ws = new WebSocket("ws://localhost:8000/chat/group/user1");
+        const ws = new WebSocket("ws://127.0.0.1:8000/chat/group/user1");
 
         ws.onmessage = function(event) {
             const message = JSON.parse(event.data);
